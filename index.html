@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>waterfall</title>
+  <script src="util.js"></script>
+  <script src="waterfall.js"></script>
   <style>
     html *{
       padding: 0;
@@ -49,9 +51,11 @@
     <img src="images/19.png" class="waterfall-box">
     <img src="images/20.png" class="waterfall-box">
   </div>
-  <script src="waterfall.js"></script>
   <script>
-    waterfall({})
+    const waterfall = new Waterfall({
+      container: 'waterfall',
+    })
+
   </script>
 </body>
 </html>
