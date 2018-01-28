@@ -1,4 +1,21 @@
-.loading {
+html * {
+  padding: 0;
+  margin: 0;
+}
+
+#waterfall {
+  position: relative;
+}
+
+.waterfall-box {
+  float: left;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  width: 200px;
+  border-radius: 2px;
+}
+
+.waterfall-loading {
   position: fixed;
   top: 50%;
   left: 50%;

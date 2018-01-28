@@ -128,7 +128,6 @@
     const minHeight = Math.min.apply(null, perList)
     for (let i in perList) {
       if (perList[i] === minHeight) {
-        pointer = i
         return i
       }
     }
@@ -148,7 +147,7 @@
     this.on('done', function() {
       isLoading = false
       // 取消加载按钮
-      const loadContainer = document.getElementsByClassName('loading')[0]
+      const loadContainer = document.getElementsByClassName('waterfall-loading')[0]
       loadContainer.setAttribute('class', '')
       self.append()
     })
@@ -159,7 +158,7 @@
   proto.loadImg = function() {
     const $waterfall = document.getElementById(this.opts.container)
     const loadContainer = document.createElement('div')
-    loadContainer.setAttribute('class', 'loading')
+    loadContainer.setAttribute('class', 'waterfall-loading')
     $waterfall.appendChild(loadContainer)
   }
 

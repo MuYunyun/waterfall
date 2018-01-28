@@ -6,28 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>waterfall</title>
-  <style>
-    html *{
-      padding: 0;
-      margin: 0;
-    }
-  </style>
   <link rel="stylesheet" href="load.css">
 </head>
 
 <body>
-  <style>
-    #waterfall {
-      position: relative;
-    }
-    .waterfall-box {
-      float: left;
-      padding-left: 10px;
-      padding-bottom: 10px;
-      width: 200px;
-      border-radius: 2px;
-    }
-  </style>
   <div id="waterfall">
     <img src="images/1.png" class="waterfall-box">
     <img src="images/2.png" class="waterfall-box">
@@ -49,9 +31,8 @@
     <img src="images/18.png" class="waterfall-box">
     <img src="images/19.png" class="waterfall-box">
     <img src="images/20.png" class="waterfall-box">
-    <!-- <div class="loading"></div> -->
   </div>
-  <script src="waterfall.js"></script>
+  <script src="waterfall.min.js"></script>
   <script>
     const waterfall = new Waterfall({
       number: 20,                 // 一次性加载的图片个数；必填
@@ -73,7 +54,6 @@
       // waterfall.done()
 
       setTimeout(function() {
-        console.log(1)
         const $waterfall = document.getElementById('waterfall')
         const imgList = $waterfall.getElementsByTagName('img')
         const fragment = document.createDocumentFragment()
@@ -85,7 +65,7 @@
         }
         $waterfall.appendChild(fragment)
         waterfall.done()
-      }, 2000)
+      }, 1000)
     })
   </script>
 </body>
