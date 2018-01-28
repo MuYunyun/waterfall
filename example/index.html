@@ -32,13 +32,13 @@
     <img src="images/19.png" class="waterfall-box">
     <img src="images/20.png" class="waterfall-box">
   </div>
-  <script src="waterfall.min.js"></script>
+  <script src="waterfall.js"></script>
   <script>
     window.onload = function() {
       const waterfall = new Waterfall({
         number: 20,                 // 一次性加载的图片个数；必填
         // fixWidth: 1250,          // 容器 width: 选填：填上后会使 window.resize 失效，fixWidth 属性优先级大于 width 属性
-        // width: 1250,             // 容器 width；选填：可以设置为一个值，设置某个节点的宽度，默认为浏览器的宽度
+        // width: 1250,             // 容器 width；选填: 默认为浏览器的宽度
         // container: 'waterfall',  // 容器 id；选填：默认为 'waterfall'
       })
 

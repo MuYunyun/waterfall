@@ -1,10 +1,10 @@
 {
   "name": "jswaterfall",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "plugin waterfall",
   "main": "waterfall.js",
   "scripts": {
-    "build": "rollup -c && cp waterfall.min.js example/waterfall.min.js && cp waterfall.css example/waterfall.css && cp index.html example/index.html",
+    "build": "rollup -c && cp waterfall.min.js example/waterfall.js && cp waterfall.css example/waterfall.css && cp index.html example/index.html",
     "publish": "git subtree push --prefix=example origin gh-pages"
   },
   "author": "muyunyun (muyy95@gmail.com)",

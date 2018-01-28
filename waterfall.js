@@ -50,7 +50,7 @@
   proto.init = function(options) {
     this.compareOpts(options)
     const $waterfall = document.getElementById(this.opts.container)
-    $waterfall.style.width = this.opts.fixWidth || this.opts.width
+    $waterfall.style.width = `${this.opts.fixWidth || this.opts.width}px`
     const imgList = $waterfall.getElementsByTagName('img')
     if (this.opts.resize) {
       this.resize(imgList)
@@ -66,8 +66,7 @@
     if (this.opts.fixWidth) {
       for (let i = 0; i < perNum; i++) {
         imgList[i].style.position = 'absolute'
-        imgList[i].style.left = `${imgList[i].offsetWidth * i}px`
-        imgList[i].style.top = 0
+        imgList[i].style.left = `${imgList[0].offsetLeft + imgList[i].offsetWidth * i}px`
       }
     }
 
