@@ -147,9 +147,20 @@
     const self = this
     this.on('done', function() {
       isLoading = false
+      // 取消加载按钮
+      const loadContainer = document.getElementsByClassName('loading')[0]
+      loadContainer.setAttribute('class', '')
       self.append()
     })
     this.emit('done')
+  }
+
+  // 添加加载动画
+  proto.loadImg = function() {
+    const $waterfall = document.getElementById(this.opts.container)
+    const loadContainer = document.createElement('div')
+    loadContainer.setAttribute('class', 'loading')
+    $waterfall.appendChild(loadContainer)
   }
 
   const resize = function () {
@@ -168,6 +179,7 @@
     const bsHeight = document.body.clientHeight || document.documentElement.clientHeight
     if (scrollPX + bsHeight > imgList[imgList.length - 1].offsetTop) { // 浏览器高度 + 滚动距离 < 最后一张图片的 offsetTop
       isLoading = true
+      this.loadImg()
       this.emit('load')
     }
   }

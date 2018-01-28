@@ -12,6 +12,7 @@
       margin: 0;
     }
   </style>
+  <link rel="stylesheet" href="load.css">
 </head>
 
 <body>
@@ -48,13 +49,14 @@
     <img src="images/18.png" class="waterfall-box">
     <img src="images/19.png" class="waterfall-box">
     <img src="images/20.png" class="waterfall-box">
+    <!-- <div class="loading"></div> -->
   </div>
   <script src="waterfall.js"></script>
   <script>
     const waterfall = new Waterfall({
-      number: 20, // 必填，一次性加载的图片个数
-      // width: 1250, // 选填：设置 width 的话，使 window.resize 事件失效
-      // container: 'waterfall', // 选填：容器 id 默认为 'waterfall'
+      number: 20,                 // 一次性加载的图片个数；必填
+      // width: 1250,             // 容器 width；选填：设置 width 的话，使 window.resize 事件失效
+      // container: 'waterfall',  // 容器 id；选填：默认为 'waterfall'
     })
 
     waterfall.on("load", function() {
