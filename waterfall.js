@@ -26,11 +26,11 @@
     eventEmitter.call(this)
     this.opts = {
       number: options.number,
+      fixWidth: options.fixWidth || null,
       width: `${options.width || document.body.clientWidth || document.documentElement.clientWidth}px`,
       container: options.container || 'waterfall',
       resize: false,
     }
-    options.width && Object.assign(this.opts, { tmpWidth: options.width })
     this.init(options) // 这个 this 是 new 的时候，绑上去的
     this.bind()
   }
@@ -50,7 +50,7 @@
   proto.init = function(options) {
     this.compareOpts(options)
     const $waterfall = document.getElementById(this.opts.container)
-    $waterfall.style.width = this.opts.width
+    $waterfall.style.width = this.opts.fixWidth || this.opts.width
     const imgList = $waterfall.getElementsByTagName('img')
     if (this.opts.resize) {
       this.resize(imgList)
@@ -62,6 +62,14 @@
     }
 
     let pointer = this.getMinPointer(perList) || '0'
+
+    if (this.opts.fixWidth) {
+      for (let i = 0; i < perNum; i++) {
+        imgList[i].style.position = 'absolute'
+        imgList[i].style.left = `${imgList[i].offsetWidth * i}px`
+        imgList[i].style.top = 0
+      }
+    }
 
     for (let i = perNum; i < imgList.length; i++) {
       imgList[i].style.position = 'absolute' // 核心语句
@@ -77,7 +85,7 @@
     const $waterfall = document.getElementById(this.opts.container)
     const imgList = $waterfall.getElementsByTagName('img')
     const singleImgWidth = imgList[0].offsetWidth // 瀑布流默认每张图片宽度相等
-    return Math.floor(parseInt(this.opts.width, 10) / singleImgWidth)
+    return Math.floor(parseInt(this.opts.fixWidth || this.opts.width, 10) / singleImgWidth)
   }
 
   // 在 init 函数基础上的优化，触发 scroll 的时候，只对增加的部分渲染，这个函数想了比较久。大体思路首先找到最后一列的图片(注意不一定连续的)，并在高度最小的那个图片后面添加图片。
@@ -116,8 +124,8 @@
   }
 
   proto.bind = function() {
-    // 如果设置死了 width 的长度，则没必要绑定 resize
-    if (!this.opts.tmpWidth) {
+    // 如果设置了 fixWidth 的长度，则没必要绑定 resize
+    if (!this.opts.fixWidth) {
       util.addEventListener('resize', resize.bind(this))
     }
     util.addEventListener('scroll', scroll.bind(this))

@@ -2,7 +2,7 @@
 
 ![](http://files.cnblogs.com/files/MuYunyun/waterfall.gif)
 
-[效果展示](http://muyunyun.cn/waterfall)
+[效果展示](http://muyunyun.cn/waterfall)，图片资源比较大，本地加载好要 30 s，，，
 
 ### feature
 
@@ -32,7 +32,8 @@ npm install jswaterfall --save
 window.onload = function() {
   const waterfall = new Waterfall({
     number: 20,                 // 一次性加载的图片个数；必填
-    // width: 1250,             // 容器 width；选填：设置 width 的话，使 window.resize 事件失效
+    // fixWidth: 1250,          // 容器 width: 选填：填上后会使 window.resize 失效，fixWidth 属性优先级大于 width 属性
+    // width: 1250,             // 容器 width；选填: 可以设置为某个节点的宽度，默认为浏览器的宽度
     // container: 'waterfall',  // 容器 id；选填：默认为 'waterfall'
   })
 
