@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>waterfall</title>
-  <link rel="stylesheet" href="load.css">
+  <link rel="stylesheet" href="waterfall.css">
 </head>
 
 <body>
@@ -37,7 +37,8 @@
     window.onload = function() {
       const waterfall = new Waterfall({
         number: 20,                 // 一次性加载的图片个数；必填
-        // width: 1250,             // 容器 width；选填：设置 width 的话，使 window.resize 事件失效
+        // fixWidth: 1250,          // 容器 width: 选填：填上后会使 window.resize 失效，fixWidth 属性优先级大于 width 属性
+        // width: 1250,             // 容器 width；选填：可以设置为一个值，设置某个节点的宽度，默认为浏览器的宽度
         // container: 'waterfall',  // 容器 id；选填：默认为 'waterfall'
       })
 
