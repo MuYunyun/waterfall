@@ -1,6 +1,6 @@
 {
   "name": "jswaterfall",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "plugin waterfall",
   "main": "waterfall.js",
   "scripts": {
