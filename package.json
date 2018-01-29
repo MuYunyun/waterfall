@@ -4,7 +4,7 @@
   "description": "plugin waterfall",
   "main": "waterfall.js",
   "scripts": {
-    "build": "rollup -c && cp waterfall.min.js example/waterfall.js && cp waterfall.css example/waterfall.css && cp index.html example/index.html",
+    "build": "rollup -c && cp waterfall.min.js example/waterfall.js && cp index.html example/index.html",
     "publish": "git subtree push --prefix=example origin gh-pages"
   },
   "author": "muyunyun (muyy95@gmail.com)",

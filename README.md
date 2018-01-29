@@ -2,7 +2,7 @@
 
 ![](http://files.cnblogs.com/files/MuYunyun/waterfall.gif)
 
-[效果展示](http://muyunyun.cn/waterfall)，图片资源比较大，本地加载好要 30 s，，，
+[效果展示](http://muyunyun.cn/waterfall)
 
 ### feature
 
