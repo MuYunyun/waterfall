@@ -201,6 +201,7 @@
     } else { // scrollElem 绑定在其它节点上
       if (isLoading) return false
       const $waterfall = document.getElementById(this.opts.container)
+      if (!$waterfall) return false // 防止 React 中多次绑定
       const imgList = $waterfall.getElementsByTagName('img')
       const parentElem = document.getElementById(this.opts.scrollElem)
       const scrollElemPX = parentElem.scrollTop
