@@ -1,8 +1,10 @@
-# waterfalljs
+# jswaterfall
 
-![](http://files.cnblogs.com/files/MuYunyun/waterfall.gif)
+![](http://oqhtscus0.bkt.clouddn.com/74f00b858ebdc430e780aa1da6ca0ce1.jpg-muyy)
 
 [效果展示](http://muyunyun.cn/waterfall)
+
+[该插件在 React 项目中的运用](https://github.com/MuYunyun/reactSPA/blob/master/src/common/pages/waterfall/index.js)
 
 ### feature
 

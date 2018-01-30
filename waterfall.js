@@ -193,7 +193,7 @@
       const imgList = $waterfall.getElementsByTagName('img')
       const scrollPX = document.body.scrollTop || document.documentElement.scrollTop
       const bsHeight = document.body.clientHeight || document.documentElement.clientHeight
-      if (scrollPX + bsHeight > imgList[imgList.length - 1].offsetTop) { // 浏览器高度 + 滚动距离 < 最后一张图片的 offsetTop
+      if (scrollPX + bsHeight > imgList[imgList.length - 1].offsetTop) { // 浏览器高度 + 滚动距离 > 最后一张图片的 offsetTop
         isLoading = true
         this.loadImg()
         this.emit('load')
